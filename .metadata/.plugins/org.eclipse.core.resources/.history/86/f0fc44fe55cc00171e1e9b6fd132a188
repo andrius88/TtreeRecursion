@@ -1,0 +1,68 @@
+package lt.and.pac.treerecursion;
+
+import java.util.Scanner;
+
+public class TreeDepthFinderApp {
+
+	public static int maxLevel = 0;
+	
+	public static void main(String[] args) {
+		
+		
+		Node node = new Node(1);
+		
+		node.nodeList.add(new Node(2));
+		node.nodeList.add(new Node(3));
+		
+		node.nodeList.get(0).nodeList.add(new Node(4));
+		node.nodeList.get(1).nodeList.add(new Node(5));
+		node.nodeList.get(1).nodeList.add(new Node(6));
+		node.nodeList.get(1).nodeList.add(new Node(7));
+		
+		node.nodeList.get(1).nodeList.get(0).nodeList.add(new Node(8));
+		node.nodeList.get(1).nodeList.get(1).nodeList.add(new Node(9));
+		node.nodeList.get(1).nodeList.get(2).nodeList.add(new Node(10));
+		
+		node.nodeList.get(1).nodeList.get(1).nodeList.get(0).nodeList.add(new Node(11));
+		node.nodeList.get(1).nodeList.get(1).nodeList.get(0).nodeList.get(0).nodeList.add(new Node(12));
+		
+		
+		
+		System.out.println("Tree was built");
+		
+		//System.out.println("Is node 2 emty: " + node.nodeList.get(0).nodeList.isEmpty());
+		//System.out.println("Size of nodeList of node 2: " + node.nodeList.get(0).nodeList.size());
+		//System.out.println("Is node 2 emty: " + node.nodeList.get(0).nodeList.get(0).nodeList.isEmpty());
+		
+		findTreeDepth(0, node);
+		System.out.println("Maximum depth is: " + maxLevel);
+		
+
+	}
+	
+	public static void findTreeDepth(int level, Node nodeIn){
+		
+		System.out.println("findTreeDepth: current node name: " + nodeIn.getName());
+		System.out.println("findTreeDepth: is nodeList of this node menty: " + nodeIn.nodeList.isEmpty());
+		if(nodeIn.nodeList.isEmpty() == false){
+			level++;
+			if (level > maxLevel){
+				maxLevel = level;
+			}
+		
+			for (Node nodeCurr : nodeIn.nodeList){
+				System.out.println("findTreeDepth: for-each: current node name: " + nodeCurr.getName());
+				if (nodeCurr.nodeList.isEmpty() == false){
+					findTreeDepth(level, nodeCurr);
+				} else {
+					level++;
+					System.out.println("findTreeDepth: maxLevel is: " + level);
+					if (level > maxLevel){
+						maxLevel = level;
+					}
+				}
+			}
+		} 	
+	}
+
+}

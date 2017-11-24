@@ -1,0 +1,24 @@
+package lt.and.pac.treerecursion;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DymNode {
+
+		private int name;
+		 List<DymNode> nodeList;
+		
+		public DymNode(int nameIn){
+			this.name = nameIn;
+			this.nodeList = new ArrayList<DymNode>();
+		}
+		
+		public int getName(){
+			return name;
+		}
+		
+		public List<DymNode> getNodeList(){
+			return nodeList;
+		}
+	
+}

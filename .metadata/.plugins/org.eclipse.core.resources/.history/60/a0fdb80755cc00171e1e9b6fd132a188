@@ -1,0 +1,12 @@
+package lt.and.pac.treerecursion;
+
+public class Tree {
+
+	Node node = new Node(0);
+	
+	/*public Tree(){
+		node.setLevel(1);
+		node.setName(1);
+		node.nodes.add(new Node);
+	}*/
+}

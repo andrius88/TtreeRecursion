@@ -1,0 +1,6 @@
+package lt.and.pac.treerecursion;
+
+public class Tree {
+
+	Node nodes = new Node();
+}

@@ -1,0 +1,18 @@
+package lt.and.pac.treerecursion;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Node {
+
+	//int level;
+	int name;
+	List<Node> nodes;
+	
+	public Node(int nameIn){
+		//this.level = levelIn;
+		this.name = nameIn;
+		this.nodes = new ArrayList();
+	}
+	
+}

@@ -1,0 +1,29 @@
+package lt.and.pac.treerecursion;
+
+public class StaticTreeCreator {
+
+	
+	public Node getRootNode(){
+		
+		Node node = new Node(1);
+		
+		node.nodeList.add(new Node(2));
+		node.nodeList.add(new Node(3));
+		
+		node.nodeList.get(0).nodeList.add(new Node(4));
+		node.nodeList.get(1).nodeList.add(new Node(5));
+		node.nodeList.get(1).nodeList.add(new Node(6));
+		node.nodeList.get(1).nodeList.add(new Node(7));
+		
+		node.nodeList.get(1).nodeList.get(0).nodeList.add(new Node(8));
+		node.nodeList.get(1).nodeList.get(1).nodeList.add(new Node(9));
+		node.nodeList.get(1).nodeList.get(2).nodeList.add(new Node(10));
+		
+		node.nodeList.get(1).nodeList.get(1).nodeList.get(0).nodeList.add(new Node(11));
+		node.nodeList.get(1).nodeList.get(1).nodeList.get(0).nodeList.get(0).nodeList.add(new Node(12));
+		
+		System.out.println("StaticTreeCreator.getRootNode(): Static tree was built");
+		
+		return node;
+	}
+}

@@ -1,0 +1,27 @@
+package lt.and.pac.treerecursion;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Node {
+
+	private int name;
+	List<Node> nodeList;
+	
+	public Node(int nameIn){
+		this.name = nameIn;
+		this.nodeList = new ArrayList();
+	}
+	
+	public int getName(){
+		return name;
+	}
+	
+	public List getnodeList(){
+		return nodeList;
+	}
+	
+	public boolean hasChildren() {
+        return nodeList.isEmpty();
+    }
+}

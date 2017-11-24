@@ -1,0 +1,23 @@
+package lt.and.pac.treerecursion;
+
+public class DynamicTreeCreator {
+
+	private int maxDepth = 5;
+	private int maxBranches = 3;
+	private static int currNodeName = 1;
+	
+	private int tmpNumOfBranches;
+	
+	public DymNode getRootNode(){
+		
+		tmpNumOfBranches = (int) Math.round(Math.random()*2)+1;
+		DymNode node = new DymNode(currNodeName);
+		currNodeName++;
+		
+		for (int i=1; i <= tmpNumOfBranches; i++){
+			node.nodeList.add(getRootNode());
+		}
+		return node;
+	}
+	
+}

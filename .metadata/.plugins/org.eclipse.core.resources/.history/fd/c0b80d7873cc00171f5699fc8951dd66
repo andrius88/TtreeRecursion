@@ -1,0 +1,40 @@
+package lt.and.pac.treerecursion;
+
+public class TreeDepthFinderApp {
+
+	public static int maxLevel = 0;
+	
+	public static void main(String[] args) {
+		
+		StaticTreeCreator staticTreeCreator = new StaticTreeCreator();
+		Node node = staticTreeCreator.getRootNode();
+
+		findTreeDepth(0, node);
+		System.out.println("Maximum tree structure depth is: " + maxLevel);
+		
+	}
+	
+	
+	public static void findTreeDepth(int level, Node nodeIn){
+		
+		if(nodeIn.getNodeList().isEmpty() == false){
+			level++;
+			
+			if (level > maxLevel){
+				maxLevel = level;
+			}
+		
+			for (Node nodeCurr : nodeIn.getNodeList()){
+				if (nodeCurr.getNodeList().isEmpty() == false){
+					findTreeDepth(level, nodeCurr);
+				} else {
+					level++;
+					if (level > maxLevel){
+						maxLevel = level;
+					}
+				}
+			}
+		} 	
+	}
+
+}

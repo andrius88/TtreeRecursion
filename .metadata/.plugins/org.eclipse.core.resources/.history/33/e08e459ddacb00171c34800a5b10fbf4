@@ -1,0 +1,10 @@
+package lt.and.pac.treerecursion;
+
+import java.util.List;
+
+public class Saka {
+
+	int level;
+	String name;
+	List<Saka> sakos;
+}

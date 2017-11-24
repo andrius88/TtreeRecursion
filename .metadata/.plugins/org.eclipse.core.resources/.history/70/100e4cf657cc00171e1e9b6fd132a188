@@ -1,0 +1,17 @@
+package lt.and.pac.treerecursion;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Saka {
+
+	int level;
+	String name;
+	List<Saka> sakos;
+	
+	public Saka(int levelIn, String nameIn, int sakuSk){
+		this.level = levelIn;
+		this.name = nameIn;
+		this.sakos = new ArrayList(sakuSk);
+	}
+}
